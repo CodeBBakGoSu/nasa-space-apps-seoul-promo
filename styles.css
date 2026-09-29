@@ -140,7 +140,7 @@ details[open] > summary .expand-icon, .faq details[open] summary span { transfor
 .timeline p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.7; }
 .timeline .hackathon-date { color: var(--red); }
 .global-stage { padding-block: 92px; background: var(--ink); color: #eeeae3; }
-.global-stage h2 { margin: 26px 0; font-size: clamp(37px, 4vw, 60px); letter-spacing: -.06em; line-height: 1.2; }
+.global-stage h2 { margin: 26px 0; font-size: clamp(37px, 4vw, 60px); letter-spacing: -.06em; line-height: 1.2; word-break: keep-all; }
 .global-description { max-width: 630px; color: #c2beb6; line-height: 1.8; }
 .results { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; margin: 58px 0 30px; }
 .results > div { border-top: 1px solid #484848; padding-top: 20px; }
@@ -243,6 +243,8 @@ details[open] > summary .expand-icon, .faq details[open] summary span { transfor
   .channel-links { grid-template-columns: 1fr; }
   .channel-links strong { font-size: 17px; }
   .email-link { font-size: clamp(16px, 5.2vw, 26px); }
+  [data-reveal] { transition: none; }
+  .reveal-pending { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
