@@ -65,18 +65,6 @@ window.addEventListener('resize', updateScroll);
 document.querySelectorAll('details').forEach(item => item.addEventListener('toggle', updateScroll));
 updateScroll();
 
-const visual = document.querySelector('.hero-visual');
-visual.addEventListener('pointermove', event => {
-  if (reducedMotion.matches || event.pointerType !== 'mouse') return;
-  const rect = visual.getBoundingClientRect();
-  visual.style.setProperty('--pointer-x', `${((event.clientX - rect.left) / rect.width - 0.5) * 12}px`);
-  visual.style.setProperty('--pointer-y', `${((event.clientY - rect.top) / rect.height - 0.5) * 12}px`);
-});
-visual.addEventListener('pointerleave', () => {
-  visual.style.setProperty('--pointer-x', '0px');
-  visual.style.setProperty('--pointer-y', '0px');
-});
-
 const copyButton = document.querySelector('#copy-hashtags');
 copyButton.hidden = false;
 copyButton.addEventListener('click', async () => {
